@@ -8,7 +8,7 @@ type Props={
   navigation: any
 }
 
-const PokemonList : FunctionComponent = () =>{
+const PokemonList : FunctionComponent<Props>  = ({navigation}) =>{
 
   const [pokemons, setPokemons] = useState<Pokemon[]>();
 
@@ -17,12 +17,15 @@ const PokemonList : FunctionComponent = () =>{
   }, []);
 
   const handlePress = (pokemon:Pokemon) =>{
+    navigation.navigate('Details', {pokemonne:pokemon})
 
   }
+  
   
   return (
     <>
       <FlatList 
+        showsVerticalScrollIndicator={false}
         data={pokemons}
         keyExtractor={ pokemon => pokemon.id.toString()}
         renderItem={(pokemon) => <PokemonCard pokemon={pokemon.item} handlePress={handlePress} />
