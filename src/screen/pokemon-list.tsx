@@ -17,7 +17,8 @@ const PokemonList : FunctionComponent<Props>  = ({navigation}) =>{
   }, []);
 
   const handlePress = (pokemon:Pokemon) =>{
-    navigation.navigate('Details', {pokemonne:pokemon})
+    console.log(pokemon.name);
+    navigation.navigate('Details',{pokemon} )
 
   }
   
@@ -28,7 +29,7 @@ const PokemonList : FunctionComponent<Props>  = ({navigation}) =>{
         showsVerticalScrollIndicator={false}
         data={pokemons}
         keyExtractor={ pokemon => pokemon.id.toString()}
-        renderItem={(pokemon) => <PokemonCard pokemon={pokemon.item} handlePress={handlePress} />
+        renderItem={(pokemon) => <PokemonCard pokemon={pokemon.item} handlePress={()=>navigation.navigate('Details',{pokemon} )} />
         }
 
       />

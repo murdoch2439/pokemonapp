@@ -6,7 +6,7 @@ type Props = {
 navigation: any;
 
 }
-const ButtonHeader : FunctionComponent<Props> = ({ navigation}) =>{
+const ButtonHeader : FunctionComponent<Props> = ({navigation}) =>{
 
  const goToAboutScreen = () =>{
         navigation.navigate('Notifications')
@@ -15,7 +15,7 @@ const ButtonHeader : FunctionComponent<Props> = ({ navigation}) =>{
   return (
     
     <View>
-      <Text onPress={(goToAboutScreen)}>About</Text>
+      <Text onPress={goToAboutScreen}>About</Text>
     </View>
     
   )

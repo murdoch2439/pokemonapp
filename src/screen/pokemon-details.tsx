@@ -1,17 +1,19 @@
 import React, { FunctionComponent } from "react";
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import Pokemon from "../model/pokemon";
 
 type Props = {
 route: any;
-  pokemon : Pokemon;
+  pokemon2 : Pokemon;
 }
-const PokemonDetails : FunctionComponent<Props> = ({ pokemon,route}) =>{
-   const {pokemonne} = route.params
+const PokemonDetails : FunctionComponent<Props> = ({route}) =>{
+   const pokemon = route.params.pokemon.item
   return (
     <>
     <View>
-      <Text>{pokemonne.name}</Text>
+      <Image source={{uri:pokemon.image}} />
+      <Text>{pokemon.name}</Text>
+      <Text>{pokemon.created.toString()}</Text>
     </View>
     </>
   )

@@ -15,7 +15,7 @@ navigation: any;
 const MainNavigation : FunctionComponent<Props> = () =>{
   return(
     <MainStack.Navigator initialRouteName="List">
-      <MainStack.Screen name="List" component={PokemonList} options={{headerTitle:'Pokemonapp', headerRight:(()=> <ButtonHeader  />)}} />
+      <MainStack.Screen name="List" component={PokemonList} options={{headerTitle:'Pokemonapp', headerRight:(()=> <ButtonHeader navigation  />)}} />
       <MainStack.Screen name="Details" component={PokemonDetails} />
   </MainStack.Navigator>
   )
