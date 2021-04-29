@@ -11,7 +11,7 @@ const PokemonDetails : FunctionComponent<Props> = ({route}) =>{
   return (
     <>
     <View>
-      <Image source={{uri:pokemon.image}} />
+      <Image source={{uri:pokemon.image}} style={{height:200}}/>
       <Text>{pokemon.name}</Text>
       <Text>{pokemon.created.toString()}</Text>
     </View>

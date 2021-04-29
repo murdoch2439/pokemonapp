@@ -29,7 +29,7 @@ const PokemonList : FunctionComponent<Props>  = ({navigation}) =>{
         showsVerticalScrollIndicator={false}
         data={pokemons}
         keyExtractor={ pokemon => pokemon.id.toString()}
-        renderItem={(pokemon) => <PokemonCard pokemon={pokemon.item} handlePress={()=>navigation.navigate('Details',{pokemon} )} />
+        renderItem={(pokemon) => <PokemonCard pokemon={pokemon.item} handlePress={()=>navigation.navigate('Details', {pokemon} )} />
         }
 
       />
