@@ -25,8 +25,8 @@ const PokemonCard : FunctionComponent<Props> = ({pokemon, handlePress}) => {
          <View style={styles.types}>
 
             {
-            pokemon.types.map((type)=>
-              (<Text style={ formatType(type).type}>{type}</Text>))
+            pokemon.types.map((type, id)=>
+              (<Text key={id} style={ formatType(type).type}>{type}</Text>))
             }
          </View>
           
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     borderColor:'pink'
   },
   pictureContainer:{
-    backgroundColor:'gray',
-    width:'43%',
+    backgroundColor:'#E5E5E5',
+    width:'45%',
     height:'100%',
     borderTopLeftRadius:5,
     borderBottomLeftRadius:5
@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
   image:{
     height:'100%',
     width:'100%',
-    alignSelf:'center'
+    alignSelf:'center',
+    resizeMode:'cover'
 
     
   },
