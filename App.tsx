@@ -2,13 +2,20 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import PokemonList from './src/screen/pokemon-list';
+import { NavigationContainer } from '@react-navigation/native';
+import MainNavigation from './src/navigation/StackNavigation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+
+    <NavigationContainer>
+
+      <View style={styles.container}>
       <StatusBar style="light" backgroundColor="grey" translucent={false}  />
-      <PokemonList />
+      <MainNavigation />
     </View>
+    </NavigationContainer>
+     
   );
 }
 
