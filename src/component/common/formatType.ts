@@ -9,7 +9,8 @@ const formatType = (type: string) => {
       marginRight:5,
       padding: 5,
       borderRadius: 5,
-      backgroundColor: color 
+      backgroundColor: color,
+      color:'white'
     }
    })
 
