@@ -12,5 +12,7 @@ export default class PokemonService{
   static getAll(): Promise<Pokemon[]>{
     return fetch(this.baseUrl).then(response => response.json());
   }
-  
+
+  static getAllPagination(page : number, size : number){
+  }
 }

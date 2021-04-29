@@ -2,7 +2,6 @@ import React, { FunctionComponent } from "react";
 import { Image, View, Text, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import Pokemon from "../../model/pokemon";
 import formatType from "../common/formatType";
-import Helpers from "../common/helpers";
 
 type Props = {
   pokemon : Pokemon;
@@ -29,12 +28,12 @@ const PokemonCard : FunctionComponent<Props> = ({pokemon, handlePress}) => {
               (<Text style={ formatType(type).type}>{type}</Text>))
             }
          </View>
-          
+
           <Text>Point de vie</Text>
         </View>
       </View>
     </TouchableWithoutFeedback>
-      
+
     </>
   );
 }
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
     width:'100%',
     alignSelf:'center'
 
-    
+
   },
   title:{
     fontSize:30,
