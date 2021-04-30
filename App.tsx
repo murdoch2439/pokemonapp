@@ -12,6 +12,7 @@ export default function App() {
       <View style={styles.container}>
       <StatusBar style="light" backgroundColor="grey" translucent={false}  />
       <MainNavigation navigation />
+      
     </View>
     </NavigationContainer>
      
@@ -21,7 +22,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    padding:10,
+    // backgroundColor: 'white',
+    // padding:10,
   },
 });
