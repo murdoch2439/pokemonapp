@@ -1,14 +1,16 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import {Image, Platform} from "react-native"
+import {Image, Platform, Text, View, StyleSheet} from "react-native"
 import * as ImagePickerApi from "expo-image-picker"
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { SimpleLineIcons } from '@expo/vector-icons';
+
 
 const ImagePicker : FunctionComponent = ()=>{
-  const [imageUri, setImageUri] = useState<string>("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png");
+  const [imageUri, setImageUri] = useState<string>("");
 
   useEffect(() => {
-    console.log("in imagepicker");
-        console.log(imageUri);
+    // console.log("in imagepicker");
+    //     console.log(imageUri);
 
     (async () => {
       if (Platform.OS !== 'web') {
@@ -24,7 +26,7 @@ const ImagePicker : FunctionComponent = ()=>{
     let result = await ImagePickerApi.launchImageLibraryAsync({
       mediaTypes: ImagePickerApi.MediaTypeOptions.Images,
       allowsEditing: true,
-      aspect: [4, 3],
+      // aspect: [4, 3],
       quality: 1,
     });
 
@@ -35,9 +37,42 @@ const ImagePicker : FunctionComponent = ()=>{
   return (
     <>
       <TouchableOpacity onPress={pickImage}>
-        <Image source={{uri:imageUri}} style={{height:100, width:100}}/>
+        {!imageUri ? 
+          <View style={styles.iconImageContianer}>
+            <SimpleLineIcons name="picture" style={styles.icon} />
+            <Text style={styles.text}>Add picture</Text>
+          </View>
+          :
+          <Image source={{uri:imageUri}} style={styles.image}/> }
+
+        {/* <Image source={{uri:imageUri}} style={{height:150, width:150}}/> */}
       </TouchableOpacity>
     </>
   )
 }
+
+
+
+const styles =StyleSheet.create({
+  iconImageContianer:{
+    height:160,
+    width:160,
+    // alignSelf:'center',
+    backgroundColor:'#E5E5E5',
+    borderRadius:5,
+  },
+  icon:{
+    fontSize:130,
+    color:'black',
+    alignSelf:'center'
+  },
+  text:{
+    fontSize:16,
+    textAlign:'center',
+  },
+  image:{
+    height:160, 
+    width:160},
+
+})
 export default ImagePicker;

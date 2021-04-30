@@ -1,20 +1,22 @@
+import { useNavigation } from "@react-navigation/core";
 import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
 
 
 type Props = {
-navigation: any;
 
 }
-const ButtonHeader : FunctionComponent<Props> = ({navigation}) =>{
+const ButtonHeader : FunctionComponent<Props> = () =>{
+  const {navigate} = useNavigation()
 
  const goToAboutScreen = () =>{
-        navigation.navigate('Notifications')
+        navigate('About')
+        // console.log(navigate);
     }
 
   return (
     
-    <View>
+    <View style={{marginRight:15}}>
       <Text onPress={goToAboutScreen}>About</Text>
     </View>
     
