@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from "react"
 import { FlatList } from "react-native";
+import ButtonAdd from "../component/boutons/buttonAdd";
 import PokemonCard from "../component/pokemon/pokemon-card";
 import Pokemon from "../model/pokemon";
 import PokemonService from "../service/pokemon-service";
@@ -33,6 +34,8 @@ const PokemonList : FunctionComponent<Props>  = ({navigation}) =>{
         }
 
       />
+      <ButtonAdd handlePress={()=>navigation.navigate('Add')}/>
+      
     </>
   );
 }
