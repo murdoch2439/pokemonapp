@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { Image, View, Text, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import Pokemon from "../../model/pokemon";
 import formatType from "../common/formatType";
-import Helpers from "../common/helpers";
+// import Helpers from "../common/helpers";
 
 type Props = {
   pokemon : Pokemon;
@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
   },
   types:{
     flexDirection:'row',
+    marginBottom:5,
     // paddingHorizontal:10
   },
   type:{

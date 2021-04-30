@@ -1,14 +1,14 @@
 import React, { FunctionComponent } from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
-import { MaterialIcons } from '@expo/vector-icons';
+
 
 type Props = {
   handlePress:any;
-  icon:any;
+  title:string;
  
 
 }
-const ButtonAdd : FunctionComponent<Props> = ({handlePress, icon}) =>{
+const ButtonSubmit : FunctionComponent<Props> = ({handlePress, title}) =>{
 
 //  const goToAboutScreen = () =>{
 //         navigation.navigate('Add')
@@ -18,9 +18,7 @@ const ButtonAdd : FunctionComponent<Props> = ({handlePress, icon}) =>{
     
     <View style={styles.container}>
       <TouchableOpacity onPress={handlePress} >
-        {icon}
-        {/* <MaterialIcons name="add" style={styles.icon} /> */}
-        {/* <Text >Add</Text> */}
+        <Text>{title}</Text>
       </TouchableOpacity>
     </View>
     
@@ -29,7 +27,7 @@ const ButtonAdd : FunctionComponent<Props> = ({handlePress, icon}) =>{
 
 const styles = StyleSheet.create({
   container:{
-    flex:1,
+    // flex:1,
     height:70,
     width:70,
     backgroundColor:'blue',
@@ -37,9 +35,9 @@ const styles = StyleSheet.create({
     alignItems:'center',
     borderRadius:100,
     position:'absolute',
-    top:530,
-    left:275,
+    top:520,
+    left:260
   }
 })
 
-export default ButtonAdd;
+export default ButtonSubmit;

@@ -7,6 +7,7 @@ import ImagePicker from "./common/Image-picker";
 type Props = {
   placeholder:string;
   type: InputType;
+  
   // pokemon : Pokemon|null
 }
 const InputComponent : FunctionComponent<Props> = ({placeholder, type}) =>{
@@ -21,7 +22,8 @@ const InputComponent : FunctionComponent<Props> = ({placeholder, type}) =>{
       : type == InputType.Text? 
         <View>
           
-            <TextInput placeholder={placeholder} style={styles.input} />
+            <TextInput placeholder={placeholder} style={styles.input}  />
+            
         
         </View>:
 

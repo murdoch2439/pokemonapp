@@ -1,17 +1,19 @@
 import React, { FunctionComponent } from "react";
 import { Image, Text, View, StyleSheet } from "react-native";
+import ButtonAdd from "../component/boutons/buttonAdd";
 import formatType from "../component/common/formatType";
 import Pokemon from "../model/pokemon";
-
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 type Props = {
-route: any;
+  route: any;
+  navigation:any;
   pokemon2 : Pokemon;
 }
-const PokemonDetails : FunctionComponent<Props> = ({route}) =>{
+const PokemonDetails : FunctionComponent<Props> = ({route, navigation}) =>{
    const pokemon:Pokemon = route.params.pokemon.item
   return (
     <>
-    <View>
+    <View style={styles.container} >
       <Image source={{uri:pokemon.picture}} style={{height:200, resizeMode:'contain'}}/>
       <View style={{paddingHorizontal:10}}>
       <Text style={styles.title}>{pokemon.name}</Text>
@@ -28,6 +30,8 @@ const PokemonDetails : FunctionComponent<Props> = ({route}) =>{
          <Text>{pokemon.cp}</Text>
 
       </View>
+      <ButtonAdd icon={<MaterialCommunityIcons name="pencil" style={styles.icon} />} handlePress={()=>navigation.navigate('Add')}/>
+
       
     </View>
     </>
@@ -35,6 +39,10 @@ const PokemonDetails : FunctionComponent<Props> = ({route}) =>{
 }
 
 const styles=StyleSheet.create({
+  container:{
+    flex:1,
+    // backgroundColor:'red',
+  },
   title:{
     fontSize:30,
     fontWeight:'bold',
@@ -42,11 +50,14 @@ const styles=StyleSheet.create({
   },
   types:{
     flexDirection:'row',
-    // paddingHorizontal:10
   },
   type:{
     fontSize:18,
     marginRight:5,
+  },
+  icon:{
+    fontSize:28,
+    color:'white'
   }
 })
 

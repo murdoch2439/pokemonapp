@@ -1,9 +1,10 @@
 import React, { FunctionComponent, useEffect, useState } from "react"
-import { FlatList } from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import ButtonAdd from "../component/boutons/buttonAdd";
 import PokemonCard from "../component/pokemon/pokemon-card";
 import Pokemon from "../model/pokemon";
 import PokemonService from "../service/pokemon-service";
+import { MaterialIcons } from '@expo/vector-icons';
 
 type Props={
   navigation: any
@@ -25,19 +26,32 @@ const PokemonList : FunctionComponent<Props>  = ({navigation}) =>{
   
   
   return (
-    <>
+    <View style={styles.container}>
       <FlatList 
         showsVerticalScrollIndicator={false}
         data={pokemons}
-        keyExtractor={ pokemon => pokemon.id.toString()}
+        keyExtractor={ pokemon => String(pokemon.id)}
         renderItem={(pokemon) => <PokemonCard pokemon={pokemon.item} handlePress={()=>navigation.navigate('Details', {pokemon} )} />
         }
 
       />
-      <ButtonAdd handlePress={()=>navigation.navigate('Add')}/>
+      <ButtonAdd icon={<MaterialIcons name="add" style={styles.icon} />} handlePress={()=>navigation.navigate('Add')}/>
       
-    </>
+    </View>
   );
 }
+
+
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    padding:10,
+  },
+  icon:{
+    color:'white',
+    fontSize:29,
+  }
+})
 
 export default  PokemonList;
