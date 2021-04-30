@@ -18,7 +18,7 @@ const ButtonSubmit : FunctionComponent<Props> = ({handlePress, title}) =>{
     
     <View style={styles.container}>
       <TouchableOpacity onPress={handlePress} >
-        <Text>{title}</Text>
+        <Text style={styles.text}>{title}</Text>
       </TouchableOpacity>
     </View>
     
@@ -29,14 +29,17 @@ const styles = StyleSheet.create({
   container:{
     // flex:1,
     height:70,
-    width:70,
-    backgroundColor:'blue',
+    width:170,
+    backgroundColor:'green',
     justifyContent:'center',
     alignItems:'center',
-    borderRadius:100,
-    position:'absolute',
-    top:520,
-    left:260
+    borderRadius:5,
+    alignSelf:'center',
+    marginVertical:20,
+  },
+  text:{
+    fontSize:20,
+    color:'white'
   }
 })
 

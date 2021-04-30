@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     // shadowColor:'black',
     borderWidth:3,
     borderStyle:'dotted',
-    borderColor:'pink'
+    borderColor:'pink',
   },
   pictureContainer:{
     backgroundColor:'#E5E5E5',

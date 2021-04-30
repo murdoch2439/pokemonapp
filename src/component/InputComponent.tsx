@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import { View, Image, TextInput, StyleSheet} from "react-native";
 import Pokemon from "../model/pokemon";
 import { InputType } from "./common/input-type";
@@ -12,17 +12,37 @@ type Props = {
 }
 const InputComponent : FunctionComponent<Props> = ({placeholder, type}) =>{
 
+
+  const [focused, setFocused] = useState(false)
+
+  const changeBorderColor = () =>{
+    
+    if(focused){
+      return 'purple'
+    }
+    
+    else{
+      return '#E5E5E5'
+    }
+  }
+
+
   return (
     <>
-      { type == InputType.Image ?
+      { type === InputType.Image ?
         <View>
           <ImagePicker />
         </View>
 
-      : type == InputType.Text? 
+      : type === InputType.Text? 
         <View>
           
-            <TextInput placeholder={placeholder} style={styles.input}  />
+            <TextInput 
+              placeholder={placeholder} 
+              style={[styles.input, {borderColor:changeBorderColor()}]}  
+              onFocus={() =>{setFocused(true)}}
+              onBlur={() =>{setFocused(false)}}
+            />
             
         
         </View>:
@@ -42,9 +62,10 @@ const InputComponent : FunctionComponent<Props> = ({placeholder, type}) =>{
 const styles = StyleSheet.create({
   input:{
     height:60,
-    width:'100%',
-    borderBottomWidth:1,
-    borderBottomColor:'pink',
+    borderBottomWidth:2,
+    // backgroundColor:'yellow',
+    margin:10,
+    paddingLeft:10,
   }
 })
 

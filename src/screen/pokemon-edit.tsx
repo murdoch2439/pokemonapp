@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, TouchableWithoutFeedback, Keyboard } from "react-native";
 import ButtonSubmit from "../component/boutons/buttonSubmit";
 import { InputType } from "../component/common/input-type";
 import InputComponent from "../component/InputComponent";
@@ -12,10 +12,9 @@ type Props = {
 }
 const PokemonEdit : FunctionComponent<Props> = ({pokemon}) =>{
 
-  // const [name, setName] = useState('')
   return (
-    <>
-      <View>
+    <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()} >
+      <View style={{flex:1}} >
         <View style={{alignSelf:'center', marginTop:5}}>
           
           <InputComponent type={InputType.Image}  />
@@ -23,10 +22,10 @@ const PokemonEdit : FunctionComponent<Props> = ({pokemon}) =>{
         <View>
           <InputComponent type={InputType.Text} placeholder='Name'   />
           
-          <ButtonSubmit title="Valider" handlePress={()=>{}} />
         </View>
+          <ButtonSubmit title="Valider" handlePress={()=>{}} />
       </View>
-    </>
+     </TouchableWithoutFeedback>
   )
 }
 
