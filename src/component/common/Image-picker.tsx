@@ -9,8 +9,8 @@ const ImagePicker : FunctionComponent = ()=>{
   const [imageUri, setImageUri] = useState<string>("");
 
   useEffect(() => {
-    console.log("in imagepicker");
-        console.log(imageUri);
+    // console.log("in imagepicker");
+    //     console.log(imageUri);
 
     (async () => {
       if (Platform.OS !== 'web') {

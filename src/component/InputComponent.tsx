@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from "react";
-import { View, Image, TextInput, StyleSheet} from "react-native";
+import { View, TextInput, StyleSheet, Text} from "react-native";
 import Pokemon from "../model/pokemon";
 import { InputType } from "./common/input-type";
 import ImagePicker from "./common/Image-picker";
@@ -7,10 +7,12 @@ import ImagePicker from "./common/Image-picker";
 type Props = {
   placeholder:string;
   type: InputType;
+  maxLength:number;
+  keyboardType:string;
   
   // pokemon : Pokemon|null
 }
-const InputComponent : FunctionComponent<Props> = ({placeholder, type}) =>{
+const InputComponent : FunctionComponent<Props> = ({placeholder, type, maxLength, keyboardType}) =>{
 
 
   const [focused, setFocused] = useState(false)
@@ -38,20 +40,19 @@ const InputComponent : FunctionComponent<Props> = ({placeholder, type}) =>{
         <View>
           
             <TextInput 
-              placeholder={placeholder} 
+              placeholder={placeholder}
+              maxLength={maxLength}
+              keyboardType={keyboardType}
               style={[styles.input, {borderColor:changeBorderColor()}]}  
               onFocus={() =>{setFocused(true)}}
               onBlur={() =>{setFocused(false)}}
             />
+
+            
             
         
-        </View>:
+        </View>: null
 
-        <View>
-
-            <TextInput placeholder={placeholder} style={styles.input} />
-
-        </View>
 
     }
       
