@@ -4,11 +4,16 @@ import * as ImagePickerApi from "expo-image-picker"
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { SimpleLineIcons } from '@expo/vector-icons';
 
-
-const ImagePicker : FunctionComponent = ()=>{
-  const [imageUri, setImageUri] = useState<string>("");
+type Properties = {
+  uri : string
+}
+const ImagePicker : FunctionComponent<Properties> = ({uri})=>{
+  const [imageUri, setImageUri] = useState<string>(uri);
 
   useEffect(() => {
+    if(uri)
+      setImageUri(uri);
+
     // console.log("in imagepicker");
     //     console.log(imageUri);
 

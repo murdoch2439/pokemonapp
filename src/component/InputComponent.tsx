@@ -6,13 +6,14 @@ import ImagePicker from "./common/Image-picker";
 
 type Props = {
   placeholder:string;
+  value: string;
   type: InputType;
   maxLength:number;
   keyboardType:string;
   
   // pokemon : Pokemon|null
 }
-const InputComponent : FunctionComponent<Props> = ({placeholder, type, maxLength, keyboardType}) =>{
+const InputComponent : FunctionComponent<Props> = ({placeholder, value, type, maxLength, keyboardType}) =>{
 
 
   const [focused, setFocused] = useState(false)
@@ -33,13 +34,14 @@ const InputComponent : FunctionComponent<Props> = ({placeholder, type, maxLength
     <>
       { type === InputType.Image ?
         <View>
-          <ImagePicker />
+          <ImagePicker uri={value} />
         </View>
 
       : type === InputType.Text? 
         <View>
           
             <TextInput 
+              value={value}
               placeholder={placeholder}
               maxLength={maxLength}
               keyboardType={keyboardType}

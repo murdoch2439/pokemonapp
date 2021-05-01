@@ -30,7 +30,7 @@ const PokemonDetails : FunctionComponent<Props> = ({route, navigation}) =>{
          <Text>{JSON.stringify(pokemon.cp)}</Text>
 
       </View>
-      <ButtonAdd icon={<MaterialCommunityIcons name="pencil" style={styles.icon} />} handlePress={()=>navigation.navigate('Add')}/>
+      <ButtonAdd icon={<MaterialCommunityIcons name="pencil" style={styles.icon} />} handlePress={()=>navigation.navigate('Add', {pokemon})}/>
 
       
     </View>

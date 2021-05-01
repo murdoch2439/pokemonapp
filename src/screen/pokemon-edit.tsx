@@ -7,12 +7,14 @@ import InputComponent from "../component/InputComponent";
 import Pokemon from "../model/pokemon";
 
 type Props = {
-  pokemon : Pokemon|null,
   
+  route : any;
+  navigation : any
   
 }
-const PokemonEdit : FunctionComponent<Props> = ({pokemon}) =>{
-
+const PokemonEdit : FunctionComponent<Props> = ({route, navigation}) =>{
+  const pokemon : Pokemon = route.params.pokemon
+  
   return (
     <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()} >
       <ScrollView>
@@ -20,13 +22,13 @@ const PokemonEdit : FunctionComponent<Props> = ({pokemon}) =>{
       <View  >
         <View style={{alignSelf:'center', marginTop:10}}>
           
-          <InputComponent type={InputType.Image}  />
+          <InputComponent type={InputType.Image} value={pokemon.picture} />
         </View>
         <View>
-          <InputComponent type={InputType.Text} placeholder='Name'   />
-          <InputComponent type={InputType.Text} placeholder='Pc' keyboardType="phone-pad"
+          <InputComponent type={InputType.Text} placeholder='Name' value={pokemon.name}  />
+          <InputComponent type={InputType.Text} placeholder='CP'   value={pokemon.cp.toString()} keyboardType="phone-pad"
               maxLength={2}  />
-          <InputComponent type={InputType.Text} placeholder='Ph' keyboardType="phone-pad"
+          <InputComponent type={InputType.Text} placeholder='Ph'   value={pokemon.hp.toString()} keyboardType="phone-pad"
               maxLength={2}  />
           <CheckBoxComponent />
           
