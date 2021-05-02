@@ -18,7 +18,7 @@ const formatType = (type: string) => {
     
 }
 
-const getTypeColor = (type: string) =>{
+export const getTypeColor = (type: string) =>{
   let color : string
    switch (type) {
         case 'Feu': 
@@ -61,4 +61,7 @@ const getTypeColor = (type: string) =>{
 
     return color ;
 }
+
+export const TypesList = ["Feu", "Eau", "Plante", "Combat", "Electrik", "Psy", "Fée", "Poisson", "Vol", "Normal", "Insecte"];
+
 export default formatType

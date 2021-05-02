@@ -16,21 +16,21 @@ const PokemonDetails : FunctionComponent<Props> = ({route, navigation}) =>{
     <View style={styles.container} >
       <Image source={{uri:pokemon.picture}} style={{height:200, resizeMode:'contain'}}/>
       <View style={{paddingHorizontal:10}}>
-      <Text style={styles.title}>{JSON.stringify(pokemon.name)}</Text>
+      <Text style={styles.title}>{pokemon.name}</Text>
 
       <Text>{pokemon.created.toString()}</Text>
       <View style={styles.types}>
 
             {
             pokemon.types.map((type, id)=>
-              (<Text key={id} style={ formatType(type).type}>{JSON.stringify(type)}</Text>))
+              (<Text key={id} style={ formatType(type).type}>{type}</Text>))
             }
          </View>
          <Text>{JSON.stringify(pokemon.hp)}</Text>
          <Text>{JSON.stringify(pokemon.cp)}</Text>
 
       </View>
-      <ButtonAdd icon={<MaterialCommunityIcons name="pencil" style={styles.icon} />} handlePress={()=>navigation.navigate('Add', {pokemon})}/>
+      <ButtonAdd style={styles.icon} icon="pencil" handlePress={()=>navigation.navigate('Add', {pokemon})}/>
 
       
     </View>

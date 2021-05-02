@@ -1,8 +1,11 @@
 import React, { FunctionComponent, useState } from "react";
 import { View, Text, ScrollView, TouchableWithoutFeedback, Keyboard } from "react-native";
 import ButtonSubmit from "../component/boutons/buttonSubmit";
+import CheckBoxListComponent from "../component/checkbox-list";
 import CheckBoxComponent from "../component/checkboxComponent";
+import { TypesList } from "../component/common/formatType";
 import { InputType } from "../component/common/input-type";
+import { NewTypes } from "../component/common/types";
 import InputComponent from "../component/InputComponent";
 import Pokemon from "../model/pokemon";
 
@@ -30,7 +33,7 @@ const PokemonEdit : FunctionComponent<Props> = ({route, navigation}) =>{
               maxLength={2}  />
           <InputComponent type={InputType.Text} placeholder='Ph'   value={pokemon.hp.toString()} keyboardType="phone-pad"
               maxLength={2}  />
-          <CheckBoxComponent />
+          <CheckBoxListComponent items={TypesList} />
           
           
         </View>

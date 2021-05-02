@@ -1,32 +1,22 @@
 import React, { FunctionComponent, useState, useEffect } from 'react'
-import { Text, View } from 'react-native'
-import { NewTypes } from './common/types'
+import { Text, View, StyleSheet } from 'react-native'
 
 type props={
   // type:Types;
   // button:string;
-
+  text : string;
+  style : {}
 }
 
-const CheckBoxComponent :  FunctionComponent<props> = () =>{
-  console.log(NewTypes);
+const CheckBoxComponent :  FunctionComponent<props> = ({text, style}) =>{
 
+  
   // useEffect(()=>{
   //   setTypes(type);
   // }, []);
   return(
-    <View style={{marginHorizontal:10}}>
-      <Text>Types</Text>
-      <View>
-        
-          {NewTypes.map((type, index)=> { return <Text key={index}>{type}</Text>} )} 
-        
-        
-        
-         
-        
-        {/* <Text>{button}</Text> */}
-      </View>
+    <View style={style}>
+      <Text >{text}</Text>
     </View>
   )
 }

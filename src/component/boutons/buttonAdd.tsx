@@ -1,14 +1,13 @@
 import React, { FunctionComponent } from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
-import { MaterialIcons } from '@expo/vector-icons';
+import {  View, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 type Props = {
   handlePress:any;
-  icon:any;
- 
-
+  icon:string;
+  style : {};
 }
-const ButtonAdd : FunctionComponent<Props> = ({handlePress, icon}) =>{
+const ButtonAdd : FunctionComponent<Props> = ({handlePress, icon, style}) =>{
 
 //  const goToAboutScreen = () =>{
 //         navigation.navigate('Add')
@@ -16,9 +15,9 @@ const ButtonAdd : FunctionComponent<Props> = ({handlePress, icon}) =>{
 
   return (
     
-    <View style={styles.container}>
+    <View onTouchStart={handlePress} style={styles.container}>
       <TouchableOpacity onPress={handlePress} >
-        {icon}
+        <MaterialCommunityIcons name={icon} style={style} />
         {/* <MaterialIcons name="add" style={styles.icon} /> */}
         {/* <Text >Add</Text> */}
       </TouchableOpacity>
@@ -26,6 +25,11 @@ const ButtonAdd : FunctionComponent<Props> = ({handlePress, icon}) =>{
     
   )
 }
+
+const screen = Dimensions.get("window");
+const dimension=  {
+  height : screen.height, width : screen.width
+};
 
 const styles = StyleSheet.create({
   container:{
@@ -37,8 +41,8 @@ const styles = StyleSheet.create({
     alignItems:'center',
     borderRadius:100,
     position:'absolute',
-    top:530,
-    left:275,
+    top : dimension.height - 190 ,
+    left: dimension.width - 100,
   }
 })
 

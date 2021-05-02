@@ -35,7 +35,7 @@ const PokemonList : FunctionComponent<Props>  = ({navigation}) =>{
         }
 
       />
-      <ButtonAdd icon={<MaterialIcons name="add" style={styles.icon} />} handlePress={()=>navigation.navigate('Add')}/>
+      <ButtonAdd icon="plus" style={styles.icon} handlePress={()=>navigation.navigate('Add')}/>
       
     </View>
   );
