@@ -5,9 +5,11 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { SimpleLineIcons } from '@expo/vector-icons';
 
 type Properties = {
-  uri : string
+  uri : string,
+  name : string;
+  onChange : any
 }
-const ImagePicker : FunctionComponent<Properties> = ({uri})=>{
+const ImagePicker : FunctionComponent<Properties> = ({uri, name, onChange})=>{
   const [imageUri, setImageUri] = useState<string>(uri);
 
   useEffect(() => {
@@ -37,8 +39,10 @@ const ImagePicker : FunctionComponent<Properties> = ({uri})=>{
 
     if (!result.cancelled) {
       setImageUri(result.uri);
+      onChange(name, imageUri);
     }
   }
+  
   return (
     <>
       <TouchableOpacity onPress={pickImage}>
