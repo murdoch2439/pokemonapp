@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from "react"
-import { FlatList, View, StyleSheet } from "react-native";
+import {Text,  FlatList, View, StyleSheet } from "react-native";
 import ButtonAdd from "../component/boutons/buttonAdd";
 import PokemonCard from "../component/pokemon/pokemon-card";
 import Pokemon from "../model/pokemon";
@@ -17,17 +17,16 @@ const PokemonList : FunctionComponent<Props>  = ({navigation}) =>{
 
   useEffect(()=>{
     setPokemons(PokemonServiceV2.getAll());
-  }, []);
+  }, [PokemonServiceV2.isThereNewsAvaible]);
 
   const handlePress = (pokemon:Pokemon) =>{
-    console.log(pokemon.name);
     navigation.navigate('Details',{pokemon} )
-
   }
   
   
   return (
     <View style={styles.container}>
+      <Text> POKEDEX : {pokemons?.length}</Text>
       <FlatList 
         showsVerticalScrollIndicator={false}
         data={pokemons}

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="511b8a9e-6e24-41d2-8331-e570586d2db3" name="Default Changelist" comment="" />
+    <list default="true" id="511b8a9e-6e24-41d2-8331-e570586d2db3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/InputComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/InputComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/pokemon-edit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/pokemon-edit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/pokemon-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/pokemon-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/pokemon-service-v2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/pokemon-service-v2.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +53,7 @@
       <workItem from="1619713796910" duration="2476000" />
       <workItem from="1619761514035" duration="5652000" />
       <workItem from="1619817163830" duration="619000" />
+      <workItem from="1620046632127" duration="295000" />
     </task>
     <task id="LOCAL-00001" summary="c">
       <created>1619714683697</created>

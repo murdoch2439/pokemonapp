@@ -3,23 +3,32 @@ import Pokemon from "../model/pokemon";
 
 export default class PokemonServiceV2{
 
-    static pokemonList : Pokemon[] = POKEMONS;
+    private static pokemonList : Pokemon[] = POKEMONS;
+    static isThereNewsAvaible : boolean = true
 
-    static getAll() : Pokemon[]{
-        return this.pokemonList
+    static total() : number{
+        return this.pokemonList.length;
     }
 
+    static getAll() : Pokemon[]{
+        this.isThereNewsAvaible = false
+        return this.pokemonList
+    }
     
     static save(pokemon : Pokemon) : boolean{
         return pokemon.id > 0 ? this.update(pokemon) : this.create(pokemon)
     }
 
     private static update(pokemon : Pokemon) : boolean{
-        this.pokemonList[pokemon.id] = pokemon;
+        this.pokemonList[pokemon.id-1] = pokemon;
+        this.isThereNewsAvaible = true
         return true;
     }
 
     private static create(pokemon : Pokemon) : boolean{
+        pokemon.id = this.total() + 1
+        this.pokemonList.push(pokemon)
+        this.isThereNewsAvaible = true
         return true
     }
 

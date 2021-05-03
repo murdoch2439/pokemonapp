@@ -10,10 +10,11 @@ type Props = {
   type: InputType;
   maxLength:number;
   keyboardType:string;
-  
+  onChange : any;
+  name : string;
   // pokemon : Pokemon|null
 }
-const InputComponent : FunctionComponent<Props> = ({placeholder, value, type, maxLength, keyboardType}) =>{
+const InputComponent : FunctionComponent<Props> = ({name, onChange, placeholder, value, type, maxLength, keyboardType}) =>{
 
 
   const [focused, setFocused] = useState(false)
@@ -34,16 +35,16 @@ const InputComponent : FunctionComponent<Props> = ({placeholder, value, type, ma
     <>
       { type === InputType.Image ?
         <View>
-          <ImagePicker uri={value} />
+          <ImagePicker name={name} onChange={onChange} uri={value} />
         </View>
 
       : type === InputType.Text? 
         <View>
           
-            <TextInput 
+            <TextInput onChangeText={ text => onChange(name, text)}
               value={value}
               placeholder={placeholder}
-              maxLength={maxLength}
+              maxLength={30}
               keyboardType={keyboardType}
               style={[styles.input, {borderColor:changeBorderColor()}]}  
               onFocus={() =>{setFocused(true)}}
