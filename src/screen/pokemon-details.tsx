@@ -26,8 +26,8 @@ const PokemonDetails : FunctionComponent<Props> = ({route, navigation}) =>{
               (<Text key={id} style={ formatType(type).type}>{type}</Text>))
             }
          </View>
-         <Text>{JSON.stringify(pokemon.hp)}</Text>
-         <Text>{JSON.stringify(pokemon.cp)}</Text>
+         <Text>{pokemon.hp}</Text>
+         <Text>{pokemon.cp}</Text>
 
       </View>
       <ButtonAdd style={styles.icon} icon="pencil" handlePress={()=>navigation.navigate('Add', {pokemon})}/>

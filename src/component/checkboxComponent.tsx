@@ -15,9 +15,7 @@ const CheckBoxComponent :  FunctionComponent<props> = ({text, style}) =>{
   //   setTypes(type);
   // }, []);
   return(
-    <View style={style}>
-      <Text >{text}</Text>
-    </View>
+      <Text style={style}>{text}</Text>
   )
 }
 

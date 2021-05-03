@@ -1,11 +1,11 @@
 import React, { FunctionComponent, useState } from "react";
+import { useEffect } from "react";
 import { View, Text, ScrollView, TouchableWithoutFeedback, Keyboard } from "react-native";
 import ButtonSubmit from "../component/boutons/buttonSubmit";
 import CheckBoxListComponent from "../component/checkbox-list";
 import CheckBoxComponent from "../component/checkboxComponent";
 import { TypesList } from "../component/common/formatType";
 import { InputType } from "../component/common/input-type";
-import { NewTypes } from "../component/common/types";
 import InputComponent from "../component/InputComponent";
 import Pokemon from "../model/pokemon";
 
@@ -16,7 +16,9 @@ type Props = {
   
 }
 const PokemonEdit : FunctionComponent<Props> = ({route, navigation}) =>{
-  const pokemon : Pokemon = route.params.pokemon
+  
+  const pokemon : Pokemon = route.params.pokemon ;
+
   
   return (
     <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()} >

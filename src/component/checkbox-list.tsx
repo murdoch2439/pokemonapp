@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from "react";
-import { Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import CheckBoxComponent from "./checkboxComponent";
 import { getTypeColor } from "./common/formatType";
 
@@ -8,11 +8,11 @@ type Properties = {
 }
 const CheckBoxListComponent : FunctionComponent<Properties> = ({items})=>{
     return (
-        <Text style={styles.container}>
+        <View style={styles.container}>
         
           {items.map((item, index) => <CheckBoxComponent style={styleCkeckBox(item)} key={index} text={item} /> ) } 
         
-        </Text>
+        </View>
     );
 }
 
