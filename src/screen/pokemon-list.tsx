@@ -5,6 +5,7 @@ import PokemonCard from "../component/pokemon/pokemon-card";
 import Pokemon from "../model/pokemon";
 import PokemonService from "../service/pokemon-service";
 import { MaterialIcons } from '@expo/vector-icons';
+import PokemonServiceV2 from "../service/pokemon-service-v2";
 
 type Props={
   navigation: any
@@ -15,7 +16,7 @@ const PokemonList : FunctionComponent<Props>  = ({navigation}) =>{
   const [pokemons, setPokemons] = useState<Pokemon[]>();
 
   useEffect(()=>{
-    setPokemons(PokemonService.getAllMocks());
+    setPokemons(PokemonServiceV2.getAll());
   }, []);
 
   const handlePress = (pokemon:Pokemon) =>{
