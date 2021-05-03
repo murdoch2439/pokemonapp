@@ -4,7 +4,7 @@ export default class Pokemon {
  hp: number = 100;
   cp: number = 10;
   name: string = 'name';
-  picture: string = 'http://...';
+  picture: string = 'https://www.maxpixel.net/static/photo/640/Heart-Postcard-Rabbit-Cute-Valentine-3075088.png';
   types: Array<string> = ['Normal'];
   created: Date = new Date()
   
