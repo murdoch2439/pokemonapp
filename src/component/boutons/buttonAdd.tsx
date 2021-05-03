@@ -27,9 +27,7 @@ const ButtonAdd : FunctionComponent<Props> = ({handlePress, icon, style}) =>{
 }
 
 const screen = Dimensions.get("window");
-const dimension=  {
-  height : screen.height, width : screen.width
-};
+const dimension=  {height : screen.height, width : screen.width};
 
 const styles = StyleSheet.create({
   container:{

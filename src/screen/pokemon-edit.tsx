@@ -17,7 +17,7 @@ type Props = {
 }
 const PokemonEdit : FunctionComponent<Props> = ({route, navigation}) =>{
   
-  const pokemon : Pokemon = route.params.pokemon ;
+  let pokemon : Pokemon = route.params? route.params.pokemon : new Pokemon;
 
   
   return (
@@ -25,6 +25,7 @@ const PokemonEdit : FunctionComponent<Props> = ({route, navigation}) =>{
       <ScrollView>
 
       <View  >
+        
         <View style={{alignSelf:'center', marginTop:10}}>
           
           <InputComponent type={InputType.Image} value={pokemon.picture} />
